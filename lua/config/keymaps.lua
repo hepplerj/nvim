@@ -7,3 +7,6 @@ local keymap = vim.api.nvim_set_keymap
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+
+-- insert @done(<date>) to end of line, ensuring a space before it
+keymap("n", "<leader>dt", "A @done(<C-r>=strftime('%Y-%m-%d')<CR>)<esc>", opts)

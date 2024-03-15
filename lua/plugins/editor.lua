@@ -22,7 +22,7 @@ return {
       },
     },
     mappings = {
-      -- Toggle check-boxes.
+      -- Toggle check-boxes. When it's toggled, append a string of @done(<date>) to the line.
       ["<leader>ch"] = {
         action = function()
           return require("obsidian").util.toggle_checkbox()
@@ -64,6 +64,15 @@ return {
         tags = note.tags,
         date = os.date("%Y-%m-%d"),
       }
+    end,
+  },
+  -- wrapping
+  {
+    "andrewferrier/wrapping.nvim",
+    config = function()
+      require("wrapping").setup({
+        softener = { markdown = 1.3 },
+      })
     end,
   },
 }
