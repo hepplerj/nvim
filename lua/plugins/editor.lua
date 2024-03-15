@@ -19,6 +19,10 @@ return {
           name = "research",
           path = "~/research/Research",
         },
+        {
+          name = "central",
+          path = "~/obsidian/Central",
+        },
       },
     },
     mappings = {

@@ -11,4 +11,6 @@ return {
       timeout = 10000,
     },
   },
+  -- toggleterm
+  { "akinsho/toggleterm.nvim", version = "*", config = true },
 }
