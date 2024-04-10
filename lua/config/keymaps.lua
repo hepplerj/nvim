@@ -11,6 +11,12 @@ keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 -- insert @done(<date>) to end of line, ensuring a space before it
 keymap("n", "<leader>dt", "A @done(<C-r>=strftime('%Y-%m-%d')<CR>)<esc>", opts)
 
+-- quick exit by typing jj
+keymap("i", "jj", "<esc>", opts)
+
+-- reload config file
+keymap("n", "<leader>rc", ":luafile ~/.config/nvim/init.lua<CR>", opts)
+
 -- obsidian
 -- when cursor is on a link, open it using :ObsidianFollowLink
 keymap("n", "<leader>of", ":ObsidianFollowLink<CR>", opts)
@@ -22,6 +28,12 @@ keymap("n", "<leader>ot", ":ObsidianToday<CR>", opts)
 -- toggleterm
 -- fire off :ToggleTerm
 keymap("n", "<leader>tt", ":ToggleTerm<CR>", opts)
+
+-- spectre search
+keymap("n", "<leader>ss", ":lua require('spectre').toggle()<CR>", opts)
+keymap("n", "<leader>sw", ":lua require('spectre').open_visual({select_word=true})<CR>", opts)
+keymap("v", "<leader>sw", ":lua require('spectre').open_visual()<CR>", opts)
+keymap("n", "<leader>sp", ":lua require('spectre').open_file_search({select_word=true})<CR>", opts)
 
 function _G.set_terminal_keymaps()
   local args = { buffer = 0 }
