@@ -13,4 +13,6 @@ return {
   },
   -- toggleterm
   { "akinsho/toggleterm.nvim", version = "*", config = true },
+  -- spectre
+  { "nvim-pack/nvim-spectre", config = true },
 }
