@@ -33,3 +33,6 @@ function _G.set_terminal_keymaps()
   vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], args)
   vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]], args)
 end
+
+-- gen.nvim
+vim.keymap.set({ "n", "v" }, "<leader>]", ":Gen<CR>")
