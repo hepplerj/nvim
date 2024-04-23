@@ -26,7 +26,7 @@ return {
       },
     },
     mappings = {
-      -- Toggle check-boxes. When it's toggled, append a string of @done(<date>) to the line.
+      -- Toggle check-boxes in Obsidian files. When it's toggled, append a string of @done(<date>) to the line.
       ["<leader>ch"] = {
         action = function()
           return require("obsidian").util.toggle_checkbox()
@@ -51,11 +51,21 @@ return {
       })
     end,
   },
-  -- llm
+  -- local llm -- must have ollama running
   {
     "David-Kunz/gen.nvim",
     opts = {
       model = "zephyr", -- The default model to use.
+    },
+  },
+  -- barbecue
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
     },
   },
 }
