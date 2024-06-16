@@ -55,4 +55,12 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
   },
+
+  -- highlight colors
+  {
+    "brenoprata10/nvim-highlight-colors",
+  },
+
+  -- wakatime
+  { "wakatime/vim-wakatime", lazy = false },
 }
