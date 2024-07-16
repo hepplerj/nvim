@@ -1,56 +1,84 @@
-local colorscheme = {
-  "rmehri01/onenord.nvim",
-  lazy = false,
-  priority = 1000,
-}
-colorscheme.config = function()
-  vim.opt.background = vim.env.NVIM_COLORSCHEME_BG or "dark"
+require("lazy").setup({
+  "marko-cerovac/material.nvim",
+})
 
-  vim.cmd.filetype("plugin indent on")
-  vim.cmd.syntax("on")
+require("material").setup({
 
-  local colors = require("onenord.colors").load()
+  contrast = {
+    terminal = false, -- Enable contrast for the built-in terminal
+    sidebars = false, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
+    floating_windows = false, -- Enable contrast for floating windows
+    cursor_line = false, -- Enable darker background for the cursor line
+    lsp_virtual_text = false, -- Enable contrasted background for lsp virtual text
+    non_current_windows = false, -- Enable contrasted background for non-current windows
+    filetypes = {}, -- Specify which filetypes get the contrasted (darker) background
+  },
 
-  local telescope_normal = colors.active
-  local telescope_prompt = colors.float
-
-  if vim.o.background == "light" then
-    telescope_prompt = "#edeff4"
-    telescope_normal = "#e4e7ee"
-  end
-
-  require("onenord").setup({
-    styles = {
-      diagnostics = "undercurl",
-      comments = "italic",
-      functions = "bold",
+  styles = { -- Give comments style such as bold, italic, underline etc.
+    comments = { --[[ italic = true ]]
     },
-    inverse = {
-      match_paren = true,
+    strings = { --[[ bold = true ]]
     },
-    custom_highlights = {
-      NvimTreeNormal = { fg = colors.fg, bg = colors.bg },
-      CurSearch = { fg = colors.cyan, bg = colors.selection, style = "bold" },
-      TelescopeTitle = { bg = telescope_prompt, fg = colors.fg },
-      TelescopeNormal = { bg = telescope_normal },
-      TelescopePromptBorder = { bg = telescope_prompt, fg = telescope_prompt },
-      TelescopePromptNormal = { bg = telescope_prompt },
-      TelescopePromptTitle = { fg = colors.fg, bg = telescope_normal },
-      TelescopeSelection = { bg = telescope_prompt },
-      TelescopePreviewBorder = { fg = telescope_normal, bg = telescope_normal },
-      TelescopeResultsBorder = { fg = telescope_normal, bg = telescope_normal },
-      MatchParenCur = { fg = colors.blue, style = "inverse" },
-      NormalFloat = { bg = colors.bg },
-      FloatBorder = { bg = colors.bg },
-      SimpleF = { fg = colors.red, bg = colors.diff_add_bg, style = "bold" },
-      fugitiveStagedHeading = { fg = colors.green },
-      fugitiveStagedSection = { fg = colors.blue },
-      fugitiveUntrackedSection = { fg = colors.blue },
-      fugitiveUnstagedSection = { fg = colors.blue },
+    keywords = { --[[ underline = true ]]
     },
-  })
+    functions = { --[[ bold = true, undercurl = true ]]
+    },
+    variables = {},
+    operators = {},
+    types = {},
+  },
 
-  return colorscheme
-end
+  plugins = { -- Uncomment the plugins that you use to highlight them
+    -- Available plugins:
+    -- "coc",
+    -- "colorful-winsep",
+    -- "dap",
+    -- "dashboard",
+    -- "eyeliner",
+    -- "fidget",
+    -- "flash",
+    -- "gitsigns",
+    -- "harpoon",
+    -- "hop",
+    -- "illuminate",
+    -- "indent-blankline",
+    -- "lspsaga",
+    -- "mini",
+    -- "neogit",
+    -- "neotest",
+    -- "neo-tree",
+    -- "neorg",
+    -- "noice",
+    -- "nvim-cmp",
+    -- "nvim-navic",
+    -- "nvim-tree",
+    -- "nvim-web-devicons",
+    -- "rainbow-delimiters",
+    -- "sneak",
+    -- "telescope",
+    -- "trouble",
+    -- "which-key",
+    -- "nvim-notify",
+  },
 
-return colorscheme
+  disable = {
+    colored_cursor = false, -- Disable the colored cursor
+    borders = false, -- Disable borders between vertically split windows
+    background = false, -- Prevent the theme from setting the background (NeoVim then uses your terminal background)
+    term_colors = false, -- Prevent the theme from setting terminal colors
+    eob_lines = false, -- Hide the end-of-buffer lines
+  },
+
+  high_visibility = {
+    lighter = false, -- Enable higher contrast text for lighter style
+    darker = false, -- Enable higher contrast text for darker style
+  },
+
+  lualine_style = "default", -- Lualine style ( can be 'stealth' or 'default' )
+
+  async_loading = true, -- Load parts of the theme asynchronously for faster startup (turned on by default)
+
+  custom_colors = nil, -- If you want to override the default colors, set this to a function
+
+  custom_highlights = {}, -- Overwrite highlights with your own
+})
