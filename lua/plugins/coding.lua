@@ -47,6 +47,7 @@ return {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
+  -- Octo
   {
     "pwntester/octo.nvim",
     dependencies = {
