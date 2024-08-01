@@ -47,6 +47,7 @@ return {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
+  -- Octo
   {
     "pwntester/octo.nvim",
     dependencies = {
@@ -63,4 +64,16 @@ return {
 
   -- wakatime
   { "wakatime/vim-wakatime", lazy = false },
+
+  -- copilot chat
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    opts = {
+      show_help = "no",
+      debug = false,
+      disable_extra_info = "no",
+      language = "English",
+    },
+    event = "VeryLazy",
+  },
 }
