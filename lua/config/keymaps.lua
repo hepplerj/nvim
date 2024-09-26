@@ -52,3 +52,6 @@ vim.keymap.set({ "n", "v" }, "<leader>]", ":Gen<CR>")
 -- fzf-lua
 keymap("n", "<leader>ff", ":lua require('fzf-lua').files()<CR>", opts) -- override the default ff keymap
 keymap("n", "<leader>fg", ":lua require('fzf-lua').git_files()<CR>", opts)
+
+-- livegrep
+keymap("n", "<leader>fp", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", opts)

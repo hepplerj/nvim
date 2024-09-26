@@ -2,7 +2,15 @@ return {
   -- telescope file browser
   {
     "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-live-grep-args.nvim",
+    },
+    config = function()
+      local telescope = require("telescope")
+      telescope.load_extension("live_grep_args")
+    end,
   },
 
   -- obsidian
