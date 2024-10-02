@@ -22,8 +22,8 @@ return {
     dependencies = { "nvim-orgmode/org-bullets.nvim" },
     config = function()
       require("orgmode").setup({
-        org_agenda_files = "~/org/**/*",
-        org_default_notes_file = "~/org/refile.org",
+        org_agenda_files = "~Documents/org/**/*",
+        org_default_notes_file = "~/Documents/org/refile.org",
         org_agenda_start_on_weekday = false,
         org_startup_indented = true,
         org_log_into_drawer = "LOGBOOK",
