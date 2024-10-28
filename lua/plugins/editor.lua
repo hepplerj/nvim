@@ -2,7 +2,15 @@ return {
   -- telescope file browser
   {
     "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-live-grep-args.nvim",
+    },
+    config = function()
+      local telescope = require("telescope")
+      telescope.load_extension("live_grep_args")
+    end,
   },
 
   -- obsidian
@@ -67,5 +75,23 @@ return {
       "SmiteshP/nvim-navic",
       "nvim-tree/nvim-web-devicons", -- optional dependency
     },
+  },
+  -- mini menu
+  { "nvchad/volt", lazy = true },
+  {
+    "nvchad/menu",
+    lazy = true,
+    config = function()
+      require("volt").setup()
+    end,
+  },
+  -- multicursor
+  {
+    "jake-stewart/multicursor.nvim",
+    branch = "1.0",
+    config = function()
+      local mc = require("multicursor-nvim")
+      mc.setup()
+    end,
   },
 }

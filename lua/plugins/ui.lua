@@ -15,4 +15,6 @@ return {
   { "nvim-pack/nvim-spectre", config = true },
   -- everforest
   { "neanias/everforest-nvim", version = false, lazy = false, priority = 1000 },
+  -- catppuccin
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 }
