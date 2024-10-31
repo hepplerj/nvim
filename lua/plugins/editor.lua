@@ -76,4 +76,22 @@ return {
       "nvim-tree/nvim-web-devicons", -- optional dependency
     },
   },
+  -- mini menu
+  { "nvchad/volt", lazy = true },
+  {
+    "nvchad/menu",
+    lazy = true,
+    config = function()
+      require("volt").setup()
+    end,
+  },
+  -- multicursor
+  {
+    "jake-stewart/multicursor.nvim",
+    branch = "1.0",
+    config = function()
+      local mc = require("multicursor-nvim")
+      mc.setup()
+    end,
+  },
 }

@@ -65,16 +65,27 @@ return {
   -- wakatime
   { "wakatime/vim-wakatime", lazy = false },
 
-  -- copilot chat
+  -- codeium
   {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    opts = {
-      show_help = "no",
-      debug = false,
-      disable_extra_info = "no",
-      language = "English",
-    },
+    "monkoose/neocodeium",
     event = "VeryLazy",
+    config = function()
+      local neocodeium = require("neocodeium")
+      neocodeium.setup()
+      vim.keymap.set("i", "<A-f>", neocodeium.accept)
+    end,
+  },
+
+  {
+    "olimorris/codecompanion.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "hrsh7th/nvim-cmp", -- Optional: For using slash commands and variables in the chat buffer
+      "nvim-telescope/telescope.nvim", -- Optional: For using slash commands
+      { "stevearc/dressing.nvim", opts = {} }, -- Optional: Improves `vim.ui.select`
+    },
+    config = true,
   },
 
   -- just syntax
