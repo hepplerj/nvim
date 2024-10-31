@@ -76,4 +76,9 @@ return {
     },
     event = "VeryLazy",
   },
+
+  -- just syntax
+  {
+    "NoahTheDuke/vim-just",
+  },
 }
