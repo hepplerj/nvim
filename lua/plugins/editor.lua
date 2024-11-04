@@ -35,6 +35,7 @@ return {
     version = "*", -- recommended, use latest release instead of latest commit
     ft = "markdown",
     dependencies = {
+      "hrsh7th/nvim-cmp",
       "nvim-lua/plenary.nvim",
     },
     opts = {
@@ -99,13 +100,13 @@ return {
     },
   },
   -- mini menu
-  { "nvchad/volt", lazy = true },
+  {
+    "nvchad/volt",
+    lazy = true,
+  },
   {
     "nvchad/menu",
     lazy = true,
-    config = function()
-      require("volt").setup()
-    end,
   },
   -- multicursor
   {
