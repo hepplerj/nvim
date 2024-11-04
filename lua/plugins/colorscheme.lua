@@ -1,15 +1,8 @@
-local colorscheme = {
+return {
   "EdenEast/nightfox.nvim",
   lazy = false,
   priority = 1000,
+  config = function()
+    vim.cmd("colorscheme nightfox")
+  end,
 }
-colorscheme.config = function()
-  vim.opt.background = vim.env.NVIM_COLORSCHEME_BG or "dark"
-
-  vim.cmd.filetype("plugin indent on")
-  vim.cmd.syntax("on")
-
-  return colorscheme
-end
-
-return colorscheme
