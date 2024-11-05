@@ -13,6 +13,22 @@ return {
     end,
   },
 
+  --nvim-cmp
+  {
+    "hrsh7th/nvim-cmp",
+    config = function()
+      local cmp = require("cmp")
+      cmp.setup({
+
+        snippet = {
+          expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+          end,
+        },
+      })
+    end,
+  },
+
   -- obsidian
   {
     "epwalsh/obsidian.nvim",
@@ -29,6 +45,12 @@ return {
           path = "~/research/Research",
         },
       },
+    },
+    completion = {
+      -- Set to false to disable completion.
+      nvim_cmp = true,
+      -- Trigger completion at 2 chars.
+      min_chars = 2,
     },
     mappings = {
       -- Toggle check-boxes in Obsidian files. When it's toggled, append a string of @done(<date>) to the line.
