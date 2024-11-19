@@ -44,10 +44,6 @@ return {
           name = "research",
           path = "~/research/Research",
         },
-        {
-          name = "central",
-          path = "~/obsidian/Central",
-        },
       },
     },
     completion = {
@@ -74,14 +70,14 @@ return {
     cmd = { "TimerStart", "TimerRepeat" },
   },
   -- wrapping
-  {
-    "andrewferrier/wrapping.nvim",
-    config = function()
-      require("wrapping").setup({
-        softener = { markdown = 1.3 },
-      })
-    end,
-  },
+  -- {
+  --   "andrewferrier/wrapping.nvim",
+  --   config = function()
+  --     require("wrapping").setup({
+  --       softener = { markdown = 1.3 },
+  --     })
+  --   end,
+  -- },
   -- local llm -- must have ollama running
   {
     "David-Kunz/gen.nvim",
