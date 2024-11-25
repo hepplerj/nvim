@@ -6,10 +6,6 @@ return {
   -- oil
   {
     "stevearc/oil.nvim",
-    dependencies = { { "echasnovski/mini.icons", opts = {} } },
-    config = function()
-      require("oil").setup()
-    end,
   },
   -- nvim-orgmode
   {

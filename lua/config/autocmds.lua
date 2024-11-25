@@ -11,12 +11,12 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "markdown", "md" },
-  callback = function()
-    vim.wo.conceallevel = 2
-  end,
-})
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+--   pattern = { "markdown", "md" },
+--   callback = function()
+--     vim.wo.conceallevel = 2
+--   end,
+-- })
 
 -- Disable Copilot for Markdown files
 -- vim.api.nvim_create_autocmd({ "FileType" }, {

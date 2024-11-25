@@ -13,12 +13,29 @@ return {
     end,
   },
 
+  --nvim-cmp
+  {
+    "hrsh7th/nvim-cmp",
+    config = function()
+      local cmp = require("cmp")
+      cmp.setup({
+
+        snippet = {
+          expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+          end,
+        },
+      })
+    end,
+  },
+
   -- obsidian
   {
     "epwalsh/obsidian.nvim",
     version = "*", -- recommended, use latest release instead of latest commit
     ft = "markdown",
     dependencies = {
+      "hrsh7th/nvim-cmp",
       "nvim-lua/plenary.nvim",
     },
     opts = {
@@ -27,11 +44,13 @@ return {
           name = "research",
           path = "~/research/Research",
         },
-        {
-          name = "central",
-          path = "~/obsidian/Central",
-        },
       },
+    },
+    completion = {
+      -- Set to false to disable completion.
+      nvim_cmp = true,
+      -- Trigger completion at 2 chars.
+      min_chars = 2,
     },
     mappings = {
       -- Toggle check-boxes in Obsidian files. When it's toggled, append a string of @done(<date>) to the line.
@@ -51,14 +70,14 @@ return {
     cmd = { "TimerStart", "TimerRepeat" },
   },
   -- wrapping
-  {
-    "andrewferrier/wrapping.nvim",
-    config = function()
-      require("wrapping").setup({
-        softener = { markdown = 1.3 },
-      })
-    end,
-  },
+  -- {
+  --   "andrewferrier/wrapping.nvim",
+  --   config = function()
+  --     require("wrapping").setup({
+  --       softener = { markdown = 1.3 },
+  --     })
+  --   end,
+  -- },
   -- local llm -- must have ollama running
   {
     "David-Kunz/gen.nvim",
@@ -77,13 +96,13 @@ return {
     },
   },
   -- mini menu
-  { "nvchad/volt", lazy = true },
+  {
+    "nvchad/volt",
+    lazy = true,
+  },
   {
     "nvchad/menu",
     lazy = true,
-    config = function()
-      require("volt").setup()
-    end,
   },
   -- multicursor
   {

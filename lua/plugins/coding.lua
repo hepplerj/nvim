@@ -76,6 +76,7 @@ return {
     end,
   },
 
+  -- code companion
   {
     "olimorris/codecompanion.nvim",
     dependencies = {
@@ -91,5 +92,14 @@ return {
   -- just syntax
   {
     "NoahTheDuke/vim-just",
+  },
+
+  {
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({})
+    end,
   },
 }
