@@ -69,3 +69,6 @@ vim.keymap.set("n", "<RightMouse>", function()
   local options = vim.bo.ft == "NvimTree" and "nvimtree" or "default"
   require("menu").open(options, { mouse = true })
 end, {})
+
+-- open code companion chat
+keymap("n", "<leader>cc", ":CodeCompanionChat<CR>", opts)
