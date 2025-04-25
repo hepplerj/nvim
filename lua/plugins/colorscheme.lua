@@ -6,20 +6,12 @@ return {
   --   "folke/tokyonight.nvim",
   -- },
   -- {
-  --   "nyoom-engineering/oxocarbon.nvim",
-  -- },
-  -- {
   --   "zortax/three-firewatch",
   -- },
   -- {
   --   "rakr/vim-two-firewatch",
   -- },
   { "miikanissi/modus-themes.nvim", priority = 1000 },
-  {
-    "vim-paper",
-    name = "vim-paper",
-    dir = "~/projects/vim-paper",
-  },
   {
     "Shatur/neovim-ayu",
     priority = 1000,
@@ -35,7 +27,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = vim.fn.getenv("ITERM_PROFILE") == "Light" and "paper" or "modus",
+      colorscheme = vim.fn.getenv("ITERM_PROFILE") == "Light" and "paper" or "oxocarbon",
     },
   },
   -- {
