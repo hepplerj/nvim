@@ -29,39 +29,6 @@ return {
     end,
   },
 
-  -- obsidian
-  {
-    "epwalsh/obsidian.nvim",
-    version = "*", -- recommended, use latest release instead of latest commit
-    ft = "markdown",
-    dependencies = {
-      "hrsh7th/nvim-cmp",
-      "nvim-lua/plenary.nvim",
-    },
-    opts = {
-      workspaces = {
-        {
-          name = "research",
-          path = "~/research/Research",
-        },
-      },
-    },
-    completion = {
-      -- Set to false to disable completion.
-      nvim_cmp = true,
-      -- Trigger completion at 2 chars.
-      min_chars = 2,
-    },
-    mappings = {
-      -- Toggle check-boxes in Obsidian files. When it's toggled, append a string of @done(<date>) to the line.
-      ["<leader>ch"] = {
-        action = function()
-          return require("obsidian").util.toggle_checkbox()
-        end,
-        opts = { buffer = true },
-      },
-    },
-  },
   -- pomo: pomodoro timer
   {
     "epwalsh/pomo.nvim",
