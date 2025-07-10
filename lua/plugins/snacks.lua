@@ -3,10 +3,6 @@ return {
   ---@module 'snacks.'
   ---@class snacks.Config
   opts = {
-    -- dashboard (slows down my startup)
-    dashboard = {
-      enabled = false,
-    },
     -- animated scroll (distracting)
     scroll = {
       enabled = false,
@@ -44,22 +40,7 @@ return {
           title_pos = "center",
           { win = "input", height = 1, border = "top" },
           { win = "list", border = "none" },
-          -- TODO: would be nice to have the full file name here.
           { win = "preview", title = "{preview}", height = 0.4, border = "top" },
-        },
-      },
-
-      -- TODO: this doesn't work still.
-      win = {
-        input = {
-          keys = {
-            ["<C-t>"] = { "edit_tab", mode = { "n", "i" } },
-          },
-        },
-        list = {
-          keys = {
-            ["<C-t>"] = "edit_tab",
-          },
         },
       },
     },
