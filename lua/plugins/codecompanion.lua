@@ -1,4 +1,4 @@
-local prompt_library = require("jah.codecompanion.prompts")
+--local prompt_library = require("~/.config/nvim/lua/plugins/jah.codecompanion.prompts")
 
 return {
   {
@@ -38,26 +38,6 @@ return {
             })
           end,
 
-          xai = function()
-            return require("codecompanion.adapters").extend("xai", {
-              env = { api_key = "AI_GROK_API_KEY" },
-            })
-          end,
-
-          openai = function()
-            return require("codecompanion.adapters").extend("openai", {
-              env = {
-                -- I'd rather use this, but it prompt's SOO MUCH
-                -- api_key = "cmd:op item get 'OpenAI - nvim Token' --vault 'Rob (Work)' --fields label='credential' --reveal",
-                api_key = "AI_OPEN_AI_API_KEY",
-              },
-              schema = {
-                model = {
-                  default = "o3-mini-2025-01-31",
-                },
-              },
-            })
-          end,
           copilot = function()
             return require("codecompanion.adapters").extend("copilot", {
               schema = {
