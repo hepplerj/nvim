@@ -24,7 +24,6 @@ return {
       formatters = {
         file = {
           truncate = 80,
-          -- filename_first = true,
         },
       },
       layout = {

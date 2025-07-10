@@ -29,22 +29,6 @@ return {
     end,
   },
 
-  -- pomo: pomodoro timer
-  {
-    "epwalsh/pomo.nvim",
-    version = "*",
-    lazy = true,
-    cmd = { "TimerStart", "TimerRepeat" },
-  },
-  -- wrapping
-  -- {
-  --   "andrewferrier/wrapping.nvim",
-  --   config = function()
-  --     require("wrapping").setup({
-  --       softener = { markdown = 1.3 },
-  --     })
-  --   end,
-  -- },
   -- local llm -- must have ollama running
   {
     "David-Kunz/gen.nvim",

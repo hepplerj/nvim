@@ -3,11 +3,8 @@ return {
   {
     "mechatroner/rainbow_csv",
   },
-  -- oil
-  {
-    "stevearc/oil.nvim",
-  },
   -- nvim-orgmode
+  -- not as powerful as org itself, but not bad either
   {
     "nvim-orgmode/orgmode",
     event = "VeryLazy",
