@@ -61,6 +61,19 @@ return {
         opts = { buffer = true },
       },
     },
+    note_frontmatter_func = function(note)
+      -- If note already has metadata, don't modify it at all
+      if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+        return note.metadata
+      end
+
+      -- Only add frontmatter to completely new notes
+      local out = {}
+      out.id = os.date("%Y%m%d%H%M%S")
+      out.added = os.date("%Y-%m-%d")
+
+      return out
+    end,
   },
   -- pomo: pomodoro timer
   {
