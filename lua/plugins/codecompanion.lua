@@ -114,18 +114,6 @@ return {
   },
 
   {
-    "saghen/blink.cmp",
-    optional = true,
-    opts = {
-      sources = {
-        per_filetype = {
-          codecompanion = { "codecompanion" },
-        },
-      },
-    },
-  },
-
-  {
     "nvim-lualine/lualine.nvim",
     opts = function(_, opts)
       local LualineCodeCompanionSpinner = require("lualine.component"):extend()
