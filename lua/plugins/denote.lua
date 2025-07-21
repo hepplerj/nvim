@@ -2,7 +2,7 @@ return {
   {
     "cvigilv/denote.nvim",
     opts = {
-      ext = "md", -- Note file extension (e.g. md, org, norg, txt)
+      ext = "org", -- Note file extension (e.g. md, org, norg, txt)
       dir = "~/Documents/notes", -- Notes directory (should already exist)
       add_heading = true, -- Add a md/org heading to new notes
       retitle_heading = true, -- Replace the first line heading when retitling
