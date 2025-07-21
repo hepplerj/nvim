@@ -2,7 +2,11 @@
 return {
   "obsidian-nvim/obsidian.nvim",
   version = "*",
-  ft = "markdown",
+  event = {
+    "BufReadPre ~/research/Research/*.md",
+    "BufNewFile ~/research/Research/*.md",
+  },
+  priority = 1000,
   dependencies = {
     "hrsh7th/nvim-cmp",
     "nvim-lua/plenary.nvim",
