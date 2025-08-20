@@ -3,11 +3,8 @@ return {
   {
     "mechatroner/rainbow_csv",
   },
-  -- oil
-  {
-    "stevearc/oil.nvim",
-  },
   -- nvim-orgmode
+  -- not as powerful as org itself, but not bad either
   {
     "nvim-orgmode/orgmode",
     event = "VeryLazy",
@@ -36,13 +33,13 @@ return {
             description = "Refile",
             template = "* TODO %?\nDEADLINE: %T",
           },
-          T = {
-            description = "Todo",
+          i = {
+            description = "Inbox",
             template = "* TODO %?\nDEADLINE: %T",
-            target = "~/Documents/org/todos.org",
+            target = "~/Documents/org/inbox.org",
           },
           w = {
-            description = "Work todo",
+            description = "Work to-do",
             template = "* TODO %?\nDEADLINE: %T",
             target = "~/Documents/org/work.org",
           },

@@ -24,9 +24,6 @@ return {
   {
     "brenoprata10/nvim-highlight-colors",
   },
-
-  -- wakatime
-  { "wakatime/vim-wakatime", lazy = false },
   -- just syntax
   {
     "NoahTheDuke/vim-just",

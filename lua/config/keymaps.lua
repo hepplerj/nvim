@@ -4,6 +4,18 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
+vim.keymap.set("n", "<leader>tc", function()
+  if vim.o.background == "dark" then
+    print("Switching to light mode")
+    vim.cmd("set background=light")
+    vim.cmd("colorscheme dawnfox")
+  else
+    print("Switching to dark mode")
+    vim.cmd("set background=dark")
+    vim.cmd("colorscheme nighfox")
+  end
+end, { desc = "Toggle light dark mode" })
+
 -- Move line up and down
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
@@ -72,3 +84,10 @@ end, {})
 
 -- open code companion chat
 keymap("n", "<leader>cc", ":CodeCompanionChat<CR>", opts)
+
+-- denote
+vim.keymap.set({ "n", "v" }, "<leader>nn", ":Denote note<cr>", { desc = "New note" })
+vim.keymap.set({ "n", "v" }, "<leader>nt", ":Denote title<cr>", { desc = "Change title" })
+vim.keymap.set({ "n", "v" }, "<leader>nk", ":Denote keywords<cr>", { desc = "Change keywords" })
+vim.keymap.set({ "n", "v" }, "<leader>nz", ":Denote signature<cr>", { desc = "Change signature" })
+vim.keymap.set({ "n", "v" }, "<leader>ne", ":Denote extension<cr>", { desc = "Change extension" })
