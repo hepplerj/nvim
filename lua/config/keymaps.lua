@@ -20,6 +20,10 @@ end, { desc = "Toggle light dark mode" })
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 
+-- Built-in undo
+vim.cmd("packadd nvim.undotree")
+vim.keymap.set("n", "<leader>u", require("undotree").open)
+
 -- insert @done(<date>) to end of line, ensuring a space before it
 keymap("n", "<leader>dt", "A @done(<C-r>=strftime('%Y-%m-%d')<CR>)<esc>", opts)
 
