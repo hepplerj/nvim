@@ -13,6 +13,7 @@ return {
     "kepano/flexoki-neovim",
     name = "flexoki",
   },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
     "f-person/auto-dark-mode.nvim",
     opts = {
