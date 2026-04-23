@@ -5,16 +5,13 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 vim.keymap.set("n", "<leader>tc", function()
-  if vim.o.background == "dark" then
-    print("Switching to light mode")
-    vim.cmd("set background=light")
-    vim.cmd("colorscheme dawnfox")
+  if vim.g.colors_name == "duskfox" then
+    vim.cmd("colorscheme flexoki")
+    vim.api.nvim_set_option_value("background", "light", {})
   else
-    print("Switching to dark mode")
-    vim.cmd("set background=dark")
-    vim.cmd("colorscheme nighfox")
+    vim.cmd("colorscheme duskfox")
   end
-end, { desc = "Toggle light dark mode" })
+end, { desc = "Toggle colorscheme" })
 
 -- Move line up and down
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
