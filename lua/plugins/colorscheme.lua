@@ -3,6 +3,7 @@ return {
     "EdenEast/nightfox.nvim",
     priority = 1000,
   },
+  { "nuvic/flexoki-nvim", name = "flexoki" },
   {
     "mvllow/modes.nvim",
     config = function()
@@ -14,12 +15,12 @@ return {
     opts = {
       update_interval = 5000,
       set_dark_mode = function()
-        vim.cmd("colorscheme carbonfox")
+        vim.cmd("colorscheme flexoki")
         vim.api.nvim_set_option_value("background", "dark", {})
       end,
       set_light_mode = function()
         -- dayfox as secondary
-        vim.cmd("colorscheme dawnfox")
+        vim.cmd("colorscheme flexoki")
         vim.api.nvim_set_option_value("background", "light", {})
       end,
     },
