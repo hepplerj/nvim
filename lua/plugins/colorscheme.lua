@@ -25,7 +25,7 @@ return {
       set_light_mode = function()
         -- dayfox as secondary
         -- or paper
-        vim.cmd("colorscheme dayfox")
+        vim.cmd("colorscheme flexoki-light")
         vim.api.nvim_set_option_value("background", "light", {})
       end,
     },

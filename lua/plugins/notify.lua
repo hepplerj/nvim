@@ -7,8 +7,11 @@ return {
     local notify = require("notify")
 
     notify.setup({
-      timeout = 2000,
+      timeout = 1000,
       merge_duplicates = false,
+      render = "compact",
+      stages = "fade",
+      top_down = true,
     })
 
     vim.notify = require("notify")
